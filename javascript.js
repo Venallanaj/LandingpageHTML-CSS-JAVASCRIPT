@@ -1,16 +1,38 @@
-function myFunction() {
-  var filter, buttons, div, b, a, i, txtValue;
-  filter = this.textInput.toUpperCase();
-  buttons = document.getElementById("buttonsSearch");
-  div = buttons.getElementsByTagName("div");
+// FUNCTION Search
 
-  for (i = 0; i < div.length; i++) {
-    b = div[i].getElementsByTagName("a")[0];
+function myFunction() {
+  let filter, ul, li, a, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName("li");
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+function searchData() {
+  debugger;
+  let filter, buttons, a, b, txtValue;
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  buttons = document.getElementById("buttonsSearch");
+  a = buttons.getElementsByTagName("a");
+
+  for (let i = 0; i < a.length; i++) {
+    b = a[i];
     txtValue = b.textContent || b.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      div[i].style.display = "";
+      a[i].style.display = "";
     } else {
-      div[i].style.display = "none";
+      a[i].style.display = "none";
     }
   }
 }

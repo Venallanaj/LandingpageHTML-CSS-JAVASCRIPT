@@ -34,38 +34,48 @@
 
     <main>
         <!-- Intro Section -->
-        <section>
-            <section class="intro-section">
-                <div class="container">
-                    <div class="intro">
-                        <div class="intro-title">
-                            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing.</h1>
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro">
+                    <div class="intro-title">
+                        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing.</h1>
 
-                        </div>
-                        <div class="intro-buttons-firstly">
-                            <input type="text" placeholder="Lorem ipsum" onkeyup="myFunction()" id="searchInput">
-                            <input type="text" placeholder="Lorem ipsum dolor" id="setLocation">
-                            <button class="btn-solid ">Lorem Ipsum</button>
-                        </div>
-                        <div class="hero-text intro-subtitle">
-                            <h2 class="text-uppercase">lorem ipsum dolor sit amet</h2>
-                        </div>
+                    </div>
+                    <div class="intro-buttons-firstly">
+                        <input type="text" placeholder="Lorem ipsum" onkeyup="searchData()" id="searchInput">
+                        <input type="text" placeholder="Lorem ipsum dolor" id="setLocation">
+                        <button class="btn-solid ">Lorem Ipsum</button>
+                    </div>
 
-                        <div class="intro-buttons-secondly" id="buttonsSearch">
-                            <a href="#" class="btn btn-outline">lorem ipsum</a>
-                            <a href="#" class="btn btn-outline btn-lorem">lorem ipsum dolor sit amet</a>
-                            <a href="#" class="btn btn-outline btn-lorem">consectetuer adipisicing</a>
-                            <a href="#" class="btn btn-outline">lorem ipsum</a>
+                    <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."
+                        title="Type in a name">
 
-                        </div>
+                    <ul id="myUL">
+                        <li><a href="#">Adele</a></li>
+                        <li><a href="#">Agnes</a></li>
+
+                        <li><a href="#">Billy</a></li>
+                        <li><a href="#">Bob</a></li>
+
+                        <li><a href="#">Calvin</a></li>
+                        <li><a href="#">Christina</a></li>
+                        <li><a href="#">Cindy</a></li>
+                    </ul> -->
+                    <div class="hero-text intro-subtitle">
+                        <h2 class="text-uppercase">lorem ipsum dolor sit amet</h2>
+                    </div>
+
+                    <div class="intro-buttons-secondly" id="buttonsSearch">
+                        <a href="#" class="btn btn-outline">lorem ipsum</a>
+                        <a href="#" class="btn btn-outline btn-lorem">lorem ipsum dolor sit amet</a>
+                        <a href="#" class="btn btn-outline btn-lorem">consectetuer adipisicing</a>
+                        <a href="#" class="btn btn-outline">lorem ipsum</a>
+
                     </div>
                 </div>
-
-            </section>
+            </div>
 
         </section>
-
-
 
 
 
@@ -84,13 +94,47 @@
                     </div>
                 </div>
 
-                <div class="reviews-costumer">
+                <div class="review-cards">
                     <div class="card">
-                        <img src="./images/brand-logo.png" alt="brand logo" class="brand-logo">
-                        <img src="./images/shape-qutions.png" alt="shape qutions" class="shape-qution">
+                        <div class="logo">
+                            <img src="./images/brand-logo.png" alt="Brand Logo">
+                        </div>
+                        <div class="review">
+                            <img src="./images/shape-qutions.png" alt="Quotation">
+                            <p class="description-review">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                Aenean
+                                commodo ligula eget
+                                dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                                nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+                                sem. Nulla consequat massa quis enim. </p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="name">Max Mustermann</p>
+                            <p class="position">Aenean vulputate (AB), Maecenas</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="logo">
+                            <img src="./images/brand-logo.png" alt="Brand Logo">
+                        </div>
+                        <div class="review">
+                            <img src="./images/shape-qutions.png" alt="Quotation">
+                            <p class="description-review">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                Aenean
+                                commodo ligula eget
+                                dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                                nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+                                sem. Nulla consequat massa quis enim. </p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="name">Max Mustermann</p>
+                            <p class="position">Aenean vulputate (AB), Maecenas</p>
+                        </div>
 
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -105,17 +149,7 @@
         </section> -->
 
 
-        <!-- <section class="cta-section">
-            <div class="container">
-                <div class="cta-text">
-                    <h4>Lorem ipsum dolor sit amet </h4>
-                    <button class="cta-btn">Lorem ipsum</button>
 
-                </div>
-
-            </div>
-
-        </section> -->
     </main>
 
 
@@ -170,6 +204,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="./javascript.js"></script>
 </body>
 
 </html>

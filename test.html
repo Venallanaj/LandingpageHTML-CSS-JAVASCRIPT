@@ -9,6 +9,51 @@
     <link rel="stylesheet" href="./test.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            height: auto;
+        }
+
+        .logo {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .review {
+            display: flex;
+            align-items: center;
+        }
+
+        .review img {
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .name {
+            margin-top: 20px;
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+    </style>
 </head>
 
 <body>
@@ -34,7 +79,7 @@
 
     <main>
         <!-- Intro Section -->
-        <section class="intro-section">
+        <!-- <section class="intro-section">
             <div class="container">
                 <div class="intro">
                     <div class="intro-title">
@@ -60,16 +105,26 @@
                         <a href="#" class="btn btn-outline">lorem ipsum</a>
                         <a href="#" class="btn btn-outline">lorem ipsum</a>
 
-                    </div>
+                    </div> -->
+
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="placeholder image">
+            <h2>Card Title</h2>
+            <p>Card Description</p>
+            <a href="#">Read More</a>
+        </div>
 
 
 
 
 
-                </div>
 
 
-            </div>
+
+        </div>
+
+
+        </div>
         </section>
 
 
@@ -81,7 +136,29 @@
     </main>
 
 
+    <script>
+        let slideIndex = [1, 1];
+        let slideId = ["mySlides1", "mySlides2"]
+        showSlides(1, 0);
+        showSlides(1, 1);
 
+        function plusSlides(n, no)
+        {
+            showSlides(slideIndex[no] += n, no);
+        }
+
+        function showSlides(n, no)
+        {
+            let i;
+            let x = document.getElementsByClassName(slideId[no]);
+            if (n > x.length) { slideIndex[no] = 1 }
+            if (n < 1) { slideIndex[no] = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex[no] - 1].style.display = "block";
+        }
+    </script>
 </body>
 
 </html>
