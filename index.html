@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="./style.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -26,6 +30,7 @@
                     <a href="#" class="btn ">
                         Anmelden
                     </a>
+
                 </div>
 
             </div>
@@ -38,7 +43,7 @@
             <div class="container">
                 <div class="intro">
                     <div class="intro-title">
-                        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing.</h1>
+                        <h1>Lorem ipsum dolor sit amet, <span> consectetur adipisicing.</span></h1>
 
                     </div>
                     <div class="intro-buttons-firstly">
@@ -46,24 +51,10 @@
                         <input type="text" placeholder="Lorem ipsum dolor" id="setLocation">
                         <button class="btn-solid ">Lorem Ipsum</button>
                     </div>
-
-                    <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."
-                        title="Type in a name">
-
-                    <ul id="myUL">
-                        <li><a href="#">Adele</a></li>
-                        <li><a href="#">Agnes</a></li>
-
-                        <li><a href="#">Billy</a></li>
-                        <li><a href="#">Bob</a></li>
-
-                        <li><a href="#">Calvin</a></li>
-                        <li><a href="#">Christina</a></li>
-                        <li><a href="#">Cindy</a></li>
-                    </ul> -->
-                    <div class="hero-text intro-subtitle">
-                        <h2 class="text-uppercase">lorem ipsum dolor sit amet</h2>
+                    <div class="intro-subtitle">
+                        <h2>lorem ipsum dolor sit amet</h2>
                     </div>
+
 
                     <div class="intro-buttons-secondly" id="buttonsSearch">
                         <a href="#" class="btn btn-outline">lorem ipsum</a>
@@ -76,10 +67,6 @@
             </div>
 
         </section>
-
-
-
-
         <section class="section-shape">
             <div class="container">
                 <div class="shape-review">
@@ -88,14 +75,16 @@
                     </div>
                     <div class="text-review">
                         <h4>Lorem ipsum dolor sit amet </h4>
-                        <p class="short-text">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, <span>
-                                enim justo, rhoncus
+                        <p class="short-text">Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+                            enim justo, <span> rhoncus
                                 ut, imperdiet a, venenatis vitae, justo.</span></p>
                     </div>
                 </div>
-
+            </div>
+            <div class="review-button-cards">
+                <a class="btn-prev" onclick="plusSlides(-1, 1)"><img src="./images/prev.png" alt=""></a>
                 <div class="review-cards">
-                    <div class="card">
+                    <div class="card mySlides2">
                         <div class="logo">
                             <img src="./images/brand-logo.png" alt="Brand Logo">
                         </div>
@@ -105,7 +94,8 @@
                                 Aenean
                                 commodo ligula eget
                                 dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-                                nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+                                nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                                quis,
                                 sem. Nulla consequat massa quis enim. </p>
                         </div>
                         <div class="card-footer">
@@ -114,7 +104,7 @@
                         </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card mySlides2">
                         <div class="logo">
                             <img src="./images/brand-logo.png" alt="Brand Logo">
                         </div>
@@ -124,7 +114,8 @@
                                 Aenean
                                 commodo ligula eget
                                 dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-                                nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+                                nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+                                quis,
                                 sem. Nulla consequat massa quis enim. </p>
                         </div>
                         <div class="card-footer">
@@ -133,22 +124,20 @@
                         </div>
 
                     </div>
+
                 </div>
+                <a class="btn-next" onclick="plusSlides(-1, 1)"><img src="./images/next.png" alt=""></a>
 
             </div>
         </section>
 
-        <!-- <section class=" cta-section">
-                        <div class="container">
-                            <div class="cta-content">
-                                <h2>Lorem ipsum dolor sit amet</h2>
-                                <button class="cta-btn">Lorem ipsum</button>
-                            </div>
-                            <img src="./images/fingers.png" alt="Image" class="cta-img">
-                        </div>
-        </section> -->
-
-
+        <section class="cta">
+            <div class="cta-content">
+                <h4>Lorem ipsum dolor sit amet</h4>
+                <a href="#" class="cta-btn">Lorem ipsum</a>
+            </div>
+            <img src="./images/fingers.png" alt="Image" class="cta-image">
+        </section>
 
     </main>
 
