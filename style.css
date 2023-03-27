@@ -244,6 +244,10 @@ p span{
 /* REVIEWS COSTUMER */
 /* REVIEWS COSTUMER */
 /* REVIEWS COSTUMER */
+h5{
+  font-size: 100px;
+  text-align: center;
+}
 
 .review-cards{
   display: flex;

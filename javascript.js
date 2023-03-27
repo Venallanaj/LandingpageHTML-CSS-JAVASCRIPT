@@ -18,26 +18,71 @@ function searchData() {
   }
 }
 
-let slideIndex = [1, 1];
-let slideId = ["mySlides1", "mySlides2"];
-showSlides(1, 0);
-showSlides(1, 1);
-debugger;
-function plusSlides(n, no) {
-  showSlides((slideIndex[no] += n), no);
+/* Sliders */
+
+let tagCards, arrElements;
+hiddenInit();
+function hiddenInit() {
+  tagCards = document.getElementsByClassName("card");
+  arrElements = Array.from(tagCards);
+
+  arrElements.forEach((tagCard, index) => {
+    if (index > 1) {
+      tagCard.hidden = true;
+    }
+  });
 }
 
-function showSlides(n, no) {
-  let i;
-  let x = document.getElementsByClassName(slideId[no]);
-  if (n > x.length) {
-    slideIndex[no] = 1;
+function previous() {
+  let index = indexHiddenPrevious();
+  if (index > 0) {
+    tagCards[index - 1].hidden = false;
+    tagCards[index + 1].hidden = true;
   }
-  if (n < 1) {
-    slideIndex[no] = x.length;
+}
+
+function next() {
+  let index = indexHiddenNext();
+  if (index > 1) {
+    tagCards[index - 2].hidden = true; //hidden
+    tagCards[index].hidden = false; // show
   }
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
+}
+
+function indexHiddenNext() {
+  var indexEl = 0;
+  var stIndex;
+
+  arrElements.forEach((tagCard, index) => {
+    if (!tagCard.hidden) {
+      stIndex = index;
+    }
+  });
+
+  arrElements.forEach((tagCard, index) => {
+    if (tagCard.hidden && indexEl == 0 && index >= stIndex) {
+      indexEl = index;
+    }
+  });
+
+  return indexEl;
+}
+
+function indexHiddenPrevious() {
+  var indexEl = 0;
+  var stIndex;
+  debugger;
+  for (var i = arrElements.length - 1; i >= 0; i--) {
+    if (!arrElements[i].hidden) {
+      indexEl = i;
+    }
   }
-  x[slideIndex[no] - 1].style.display = "block";
+
+  arrElements.forEach((tagCard, index) => {
+    if (tagCard.hidden && indexEl == 0 && index <= stIndex) {
+      indexEl = index;
+    }
+  });
+
+  return indexEl;
 }
