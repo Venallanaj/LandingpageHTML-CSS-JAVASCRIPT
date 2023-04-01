@@ -1,25 +1,6 @@
 // FUNCTION Search
 
-function myFunction() {
-  let filter, ul, li, a, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("myUL");
-  li = ul.getElementsByTagName("li");
-
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
-    }
-  }
-}
-
 function searchData() {
-  debugger;
   let filter, buttons, a, b, txtValue;
   input = document.getElementById("searchInput");
   filter = input.value.toUpperCase();
@@ -37,32 +18,71 @@ function searchData() {
   }
 }
 
-const cardSliders = document.querySelectorAll(".card-slider");
+/* Sliders */
 
-cardSliders.forEach((slider) => {
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+let tagCards, arrElements;
+hiddenInit();
+function hiddenInit() {
+  tagCards = document.getElementsByClassName("card");
+  arrElements = Array.from(tagCards);
 
-  slider.addEventListener("mousedown", (e) => {
-    isDown = true;
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
+  arrElements.forEach((tagCard, index) => {
+    if (index > 1) {
+      tagCard.hidden = true;
+    }
+  });
+}
+
+function previous() {
+  let index = indexHiddenPrevious();
+  if (index > 0) {
+    tagCards[index - 1].hidden = false;
+    tagCards[index + 1].hidden = true;
+  }
+}
+
+function next() {
+  let index = indexHiddenNext();
+  if (index > 1) {
+    tagCards[index - 2].hidden = true; //hidden
+    tagCards[index].hidden = false; // show
+  }
+}
+
+function indexHiddenNext() {
+  var indexEl = 0;
+  var stIndex;
+
+  arrElements.forEach((tagCard, index) => {
+    if (!tagCard.hidden) {
+      stIndex = index;
+    }
   });
 
-  slider.addEventListener("mouseleave", () => {
-    isDown = false;
+  arrElements.forEach((tagCard, index) => {
+    if (tagCard.hidden && indexEl == 0 && index >= stIndex) {
+      indexEl = index;
+    }
   });
 
-  slider.addEventListener("mouseup", () => {
-    isDown = false;
+  return indexEl;
+}
+
+function indexHiddenPrevious() {
+  var indexEl = 0;
+  var stIndex;
+  debugger;
+  for (var i = arrElements.length - 1; i >= 0; i--) {
+    if (!arrElements[i].hidden) {
+      indexEl = i;
+    }
+  }
+
+  arrElements.forEach((tagCard, index) => {
+    if (tagCard.hidden && indexEl == 0 && index <= stIndex) {
+      indexEl = index;
+    }
   });
 
-  slider.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 3;
-    slider.scrollLeft = scrollLeft - walk;
-  });
-});
+  return indexEl;
+}
